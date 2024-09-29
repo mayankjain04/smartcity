@@ -1,0 +1,145 @@
+{% extends 'smartcity/layout.html' %}
+
+{% block title %}
+Project Smartcity
+{% endblock %}
+
+{% block script %}
+<style>
+  /* CSS styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    /* light gray background */
+  }
+
+  .header {
+    background-color: #3498db;
+    /* blue header */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 2s;
+    /* add animation to header */
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .box {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s;
+    /* add transition to box */
+  }
+
+  .box h2 {
+    color: #2ecc71;
+    /* green headings */
+  }
+
+  .box p {
+    color: #666;
+    /* dark gray text */
+  }
+
+  .box img {
+    border: 1px solid #ccc;
+    /* light gray border around images */
+    border-radius: 10px;
+  }
+
+  /* Add some colors to the boxes */
+  .box:nth-child(1) {
+    background-color: #ffe6e6;
+    /* light pink background for traffic monitoring */
+  }
+
+  .box:nth-child(2) {
+    background-color: #e6ffe6;
+    /* light green background for medical help */
+  }
+
+  .box:nth-child(3) {
+    background-color: #c7e6ff;
+    /* light blue background for garbage disposal */
+  }
+
+  /* Additional styles for a more attractive design */
+  .box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .box h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #2ecc71;
+    margin: 10px auto;
+  }
+
+  /* Add animation to boxes */
+  .box {
+    animation: fadeIn 2s;
+    /* add animation to boxes */
+  }
+
+  /* Define animation keyframes */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+{% endblock %}
+
+{% block main %}
+<div class="header">
+  <h1>Traffic System in Smart City</h1>
+  <p>A comprehensive system for a smarter and more efficient city</p>
+</div>
+<div class="content">
+  <a href="https://projectvision.pythonanywhere.com">
+    <div class="box">
+      <h2>Traffic Monitoring</h2>
+      <p>The traffic management system uses real-time data to optimize traffic signal timing and reduce congestion,
+        making your daily commute faster and safer.</p>
+      <img src="https://u7.uidownload.com/vector/955/719/vector-map-and-traffic-lights-eps-ai.jpg" alt="" width="250"
+        height="150">
+    </div>
+  </a>
+  <a href="{% url 'hospitals-index' %}">
+    <div class="box">
+      <h2>Medical Help</h2>
+      <p>This app helps locate all the medical services in your area, providing you with accurate data about hospitals,
+        clinics, and pharmacies, so you can get the help you need in no time.</p>
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/017/385/802/original/medical-help-concept-color-illustration-flat-vector.jpg"
+        alt="" width="250" height="150">
+    </div>
+  </a>
+
+  <div class="box">
+    <h2>Garbage Disposal</h2>
+    <p>The garbage disposal guide gives accurate and latest data on trash bins and garbage disposal facilities in your
+      area, helping you keep your city clean and green.</p>
+    <IMG SRC="" alt="" width="250" height="150">
+  </div>
+</div>
+{% endblock %}

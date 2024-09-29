@@ -1,0 +1,119 @@
+.zerospace {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.logo-img {
+    max-width: 170px; 
+    height: auto;
+}
+
+.navbar-brand {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#navbar {
+    background-color: #234E70;
+}
+
+
+.fixed-top {
+    position: fixed;
+}
+#traffic-info {
+    margin-top: 5px;
+    width: auto;
+}
+
+#other_routes{
+    background-color: #888;
+    position:absolute;
+    width: 90%;
+}
+
+#live {
+    color: red;
+}
+
+#map {
+    height: 400px;
+    width: 90%;
+    border: 1px solid black;
+}
+
+#traffic-data {
+    width: 90%;
+    height: 400px;
+    float: right;
+    overflow-y: auto;
+    border: 1px solid black;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+@media (min-width: 768px) {
+    #map {
+        width: 55%;
+        height: 500px;
+    }
+    #traffic-data {
+        height: 500px;
+        width: 40%;
+        margin-left: 0px;
+    }
+    #other_routes {
+        width: 40%;
+    }
+}
+
+.borderless {
+    border: 0;
+}
+
+body {
+    padding-top: 56px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 5px;
+}
+.wrapper {
+    flex: 1;
+}
+
+
+.cc {
+    background-color: rgb(197, 197, 197);
+    color: gray;
+}
+
+.responsive-image {
+    max-width: 100%;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #888  white;
+}
+
+.container {
+    border: none !important;
+}
+
+#suggest {
+    width: 300px; 
+    height: 150px; 
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+a {
+    text-decoration: none;
+  }

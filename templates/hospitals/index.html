@@ -1,0 +1,121 @@
+{% extends 'smartcity/layout.html' %}
+
+{% block title %}
+Project Smartcity
+{% endblock %}
+
+{% block script %}
+<style>
+    .pgt-header {
+        background-color: #007BFF;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+    }
+
+    .pgt-main {
+        padding: 20px;
+    }
+
+    .pgt-search {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .pgt-input-text {
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .pgt-button {
+        padding: 10px 15px;
+        margin-left: 10px;
+        border: none;
+        background-color: #007BFF;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .pgt-button:hover {
+        background-color: #0056b3;
+    }
+
+    .pgt-results {
+        margin-top: 20px;
+    }
+
+    .pgt-ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .pgt-li {
+        background-color: white;
+        margin: 10px 0;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .pgt-map {
+        height: 100vh;
+        width: 100%;
+    }
+</style>
+
+<script>
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 2,
+            center: { lat: 20, lng: 0 },
+        });
+
+        // Example hospital data
+        const hospitals = [
+            { name: "Hospital A", lat: 34.0522, lng: -118.2437 },
+            { name: "Hospital B", lat: 40.7128, lng: -74.0060 },
+        ];
+
+        hospitals.forEach(hospital => {
+            new google.maps.Marker({
+                position: { lat: hospital.lat, lng: hospital.lng },
+                map: map,
+            });
+        });
+    }
+</script>
+
+{% endblock %}
+
+{% block main %}
+
+<body class="pgt-body">
+    <header class="pgt-header">
+        <h1>Hospital Locator</h1>
+        <p>Find hospitals in an area</p>
+    </header>
+
+    <main class="pgt-main">
+        <section class="pgt-search" id="search">
+            <input type="text" class="pgt-input-text" id="location" placeholder="Enter your location">
+            <button class="pgt-button" id="search-button">Search</button>
+        </section>
+
+        <section class="pgt-results" id="results">
+            <h2>Hospitals Near You</h2>
+            <ul class="pgt-ul" id="hospital-list">
+                <!-- List of hospitals will be populated here -->
+            </ul>
+        </section>
+    </main>
+
+    <footer class="pgt-footer">
+        <p>&copy; Hospital Locator IN PROJECT VISION</p>
+    </footer>
+</body>
+
+{% endblock %}

@@ -1,11 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    hello, traffic!
-</body>
-</html>
+{% extends "smartcity/layout.html" %}
+{% load static %}
+
+{% block title %}
+Project Vision
+{% endblock %}
+
+{% block main %}
+<h1 class="text-center mt-3">Traffic Map</h1>
+<p class="container-fluid px-5 fst-italic">Showing search results for <span class="text-primary">your location</span></p>
+<div class="container-fluid pb-2">
+    <div class="row align-items-center justify-content-center">
+        <div class="d-flex col col-md-6 col-12" id="map"></div>
+        <div id="traffic-data">
+            <h4 id="other_routes" class="text-center">Nearby Routes</h4> <br>
+            <div id="traffic-info" class="col col-md-6 col-auto ps-3 pt-3">
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container-fluid d-flex align-items-center justify-content-center">
+    <form action="/traffic" method="get" class="form-control w-auto pt-3 p-2 borderless" id="addressform">
+        <div class="container">
+            <h4 class="row align-items-center justify-content-center">Search for other Areas</h4>
+            <div class="row align-items-center justify-content-center pb-2">
+                <label for="address text-center" class="col-6">Location Name:</label>
+                <input autocomplete="off" class="form-control col-auto" type="text" name="address" placeholder="Address" id="address">
+            </div>
+            <div class="row align-items-center justify-content-center pb-2">
+                <label for="radius" class="col-6 text-center">Radius:</label>
+                <input class="form-control col-auto" type="number" name="radius" placeholder="Radius in meters"
+                    max="10000" value="1000" id="radius">
+            </div>
+            <div class="text-center align-items-center justify-content-center">
+                <input type="submit" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container-fluid text-center">
+    <small class="text-danger">Please make sure to turn on location if you are having trouble seeing the map.</small>
+</div>
+{% endblock %}
+{% block scripttag %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+<script src="{% static 'script/traffic.js' %}" radius="1000"></script>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "smartcity/layout.html" %}
+
+{% block script %}
+
+{% endblock %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid text-center">
+    <h1 class="header text-success">Profile: Anonymous</h1>
+</div>
+{% if True %}
+<form action="/profile" style="border: 0;" id="NameChange" method="post" class="form-control w-auto mx-auto mt-3 p-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="d-flex col-auto align-items-center">
+                <label for="username">Change username:</label>
+            </div>
+            <div class="d-flex col-auto align-items-center">
+                <input required autocomplete="off" maxlength="20" class="form-control" type="text" id="NewName"
+                    name="NewName" value="" placeholder="Username">
+            </div>
+            <div class="d-flex py-3 col-auto align-items-center">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form action="/profile" style="border: 0;" id="NameChange" method="post" class="form-control w-auto mx-auto mt-3 p-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="d-flex col-auto align-items-center">
+                <label for="password">Change Password:</label>
+            </div>
+            <div class="d-flex col-auto align-items-center">
+                <input required autocomplete="off" minlength="6" class="form-control" type="password" id="NewPass"
+                    name="NewPass" value="" placeholder="Password">
+            </div>
+            <div class="d-flex py-3 col-auto align-items-center">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% else %}
+user not logged in
+{% endif %}
+{% endblock %}

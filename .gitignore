@@ -14,11 +14,9 @@ __pycache__/
 /staticfiles/
 media/
 
-# VSCode (if you're using it)
+# VSCode
 .vscode/
 
 # Secrets
 .env
 
-# PyCharm (if you're using it)
-.idea/

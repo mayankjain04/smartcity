@@ -1,0 +1,31 @@
+{% extends "smartcity/layout.html" %}
+
+{% block title %}
+Log-in
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid text-center">
+    <form action="/login" method="post" class="form-control w-auto mx-auto pt-5 p-4 borderless">
+
+        {%  csrf_token  %}
+        <div class="form-group py-2">
+            <input required autofocus autocomplete="off" class="form-control mx-auto w-auto" type="text" id="username" name="username" placeholder="Username" value="">
+        </div>
+        <div class="form-group py-2">
+            <input required class="form-control mx-auto w-auto" type="password" id="password" name="password" placeholder="Password">
+        </div>
+        <div class="form-group py-2">
+            <input type="submit" class="btn btn-primary">
+        </div>
+    </form>
+    <div>
+        <a class="py-2 link-danger" href="/register">new user? register</a>
+    </div>
+    {% if message %}
+    <div>
+        <small class="text-success">{{ message }}</small>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

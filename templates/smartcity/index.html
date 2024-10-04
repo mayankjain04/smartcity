@@ -19,7 +19,7 @@ Project Smartcity
     color: #fff;
     padding: 20px;
     text-align: center;
-    animation: fadeIn 2s;
+    animation: fadeIn 1s;
     /* add animation to header */
   }
 
@@ -90,7 +90,7 @@ Project Smartcity
 
   /* Add animation to boxes */
   .box {
-    animation: fadeIn 2s;
+    animation: fadeIn 1s;
     /* add animation to boxes */
   }
 
@@ -115,7 +115,7 @@ Project Smartcity
   <p>A comprehensive system for a smarter and more efficient city</p>
 </div>
 <div class="content">
-  <a href="https://projectvision.pythonanywhere.com">
+  <a href="/traffic">
     <div class="box">
       <h2>Traffic Monitoring</h2>
       <p>The traffic management system uses real-time data to optimize traffic signal timing and reduce congestion,
@@ -139,7 +139,11 @@ Project Smartcity
     <h2>Garbage Disposal</h2>
     <p>The garbage disposal guide gives accurate and latest data on trash bins and garbage disposal facilities in your
       area, helping you keep your city clean and green.</p>
-    <IMG SRC="" alt="" width="250" height="150">
+    <IMG src="https://img.freepik.com/premium-vector/garbage-collection-waste-recycling-transportation-city_313242-973.jpg?w=2000" alt="" width="250" height="150">
   </div>
 </div>
+
+{% endblock %}
+{% block footer %}
+Project Smartcity
 {% endblock %}

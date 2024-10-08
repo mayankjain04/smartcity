@@ -15,3 +15,6 @@ def documentation(request):
 
 def profile(request):
     return render(request, 'smartcity/profile.html')
+
+def support(request):
+    return render(request, 'smartcity/support.html')

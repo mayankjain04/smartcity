@@ -28,4 +28,5 @@ urlpatterns = [
     path('profile', views.profile, name='profile'),
     path('traffic/', include('traffic.urls')),
     path('hospitals/', include('hospitals.urls')),
+    path('support', views.support, name='support'),
 ]

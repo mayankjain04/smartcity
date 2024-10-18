@@ -14,7 +14,7 @@ Project Smartcity
   }
 
   .header {
-    background-color: #3498db;
+    background-color: #b3b3ff;
     /* blue header */
     color: #fff;
     padding: 20px;
@@ -91,6 +91,10 @@ Project Smartcity
   /* Add animation to boxes */
   .box {
     animation: fadeIn 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     /* add animation to boxes */
   }
 
@@ -111,7 +115,7 @@ Project Smartcity
 
 {% block main %}
 <div class="header">
-  <h1>Traffic System in Smart City</h1>
+  <h1>Smart City</h1>
   <p>A comprehensive system for a smarter and more efficient city</p>
 </div>
 <div class="content">
@@ -124,6 +128,7 @@ Project Smartcity
         height="150">
     </div>
   </a>
+
   <a href="{% url 'hospitals-index' %}">
     <div class="box">
       <h2>Medical Help</h2>
@@ -135,13 +140,30 @@ Project Smartcity
     </div>
   </a>
 
-  <div class="box">
-    <h2>Garbage Disposal</h2>
-    <p>The garbage disposal guide gives accurate and latest data on trash bins and garbage disposal facilities in your
-      area, helping you keep your city clean and green.</p>
-    <IMG src="https://img.freepik.com/premium-vector/garbage-collection-waste-recycling-transportation-city_313242-973.jpg?w=2000" alt="" width="250" height="150">
-  </div>
+  <a href="{% url 'garbage-index' %}">
+    <div class="box">
+      <h2>Garbage Disposal</h2>
+      <p>The garbage disposal guide gives accurate and latest data on trash bins and garbage disposal facilities in your
+        area, helping you keep your city clean and green.</p>
+      <IMG
+        src="https://img.freepik.com/premium-vector/garbage-collection-waste-recycling-transportation-city_313242-973.jpg?w=2000"
+        alt="" width="250" height="150">
+    </div>
+  </a>
+
+  <a href="#">
+    <div class="box">
+      <h2>Women Helpline</h2>
+      <p>The Women Helpline guide gives accurate and latest data on trash bins and garbage disposal facilities in your
+        area, helping you keep your city clean and green.</p>
+      <IMG
+        src="https://img.freepik.com/premium-vector/garbage-collection-waste-recycling-transportation-city_313242-973.jpg?w=2000"
+        alt="" width="250" height="150">
+    </div>
+  </a>
+
 </div>
+
 
 {% endblock %}
 {% block footer %}

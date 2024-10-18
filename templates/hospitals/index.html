@@ -6,8 +6,15 @@ Project Smartcity
 
 {% block script %}
 <style>
+    .pgt-body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
     .pgt-header {
-        background-color: #007BFF;
+        background-color: #0966c9;
         color: white;
         text-align: center;
         padding: 1em 0;
@@ -17,7 +24,7 @@ Project Smartcity
         padding: 20px;
     }
 
-    .pgt-search {
+    #pgt-search {
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
@@ -34,7 +41,7 @@ Project Smartcity
         padding: 10px 15px;
         margin-left: 10px;
         border: none;
-        background-color: #007BFF;
+        background-color: #fc3e04;
         color: white;
         border-radius: 4px;
         cursor: pointer;
@@ -44,7 +51,7 @@ Project Smartcity
         background-color: #0056b3;
     }
 
-    .pgt-results {
+    #pgt-results {
         margin-top: 20px;
     }
 
@@ -54,67 +61,47 @@ Project Smartcity
     }
 
     .pgt-li {
-        background-color: white;
+        background-color: rgb(249, 249, 252);
         margin: 10px 0;
         padding: 15px;
-        border: 1px solid #ddd;
+        border: 1px solid #0596f7;
         border-radius: 4px;
     }
-
-    .pgt-map {
-        height: 100vh;
-        width: 100%;
-    }
 </style>
-
-<script>
-    function initMap() {
-        const map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 2,
-            center: { lat: 20, lng: 0 },
-        });
-
-        // Example hospital data
-        const hospitals = [
-            { name: "Hospital A", lat: 34.0522, lng: -118.2437 },
-            { name: "Hospital B", lat: 40.7128, lng: -74.0060 },
-        ];
-
-        hospitals.forEach(hospital => {
-            new google.maps.Marker({
-                position: { lat: hospital.lat, lng: hospital.lng },
-                map: map,
-            });
-        });
-    }
-</script>
 
 {% endblock %}
 
 {% block main %}
-
-<body class="pgt-body">
+<div class="pgt-body">
     <header class="pgt-header">
         <h1>Hospital Locator</h1>
         <p>Find hospitals in an area</p>
     </header>
 
     <main class="pgt-main">
-        <section class="pgt-search" id="search">
-            <input type="text" class="pgt-input-text" id="location" placeholder="Enter your location">
-            <button class="pgt-button" id="search-button">Search</button>
+        <section id="pgt-search">
+            <input type="text" id="pgt-location" class="pgt-input-text" placeholder="Enter your location">
+            <button id="pgt-search-button" class="pgt-button">Search</button>
         </section>
 
-        <section class="pgt-results" id="results">
-            <h2>Hospitals Near You</h2>
-            <ul class="pgt-ul" id="hospital-list">
+        <section id="pgt-results">
+            <h2>List of Hospitals at makronia road</h2>
+            <ol type="I" id="pgt-hospital-list">
+                <li class="pgt-li">Sagar Hospital</li>
+                <li class="pgt-li">Dr Rai Hospital Sagar</li>
+                <li class="pgt-li">Bansal Hospital Sagar</li>
+                <li class="pgt-li">Suyash Hospital</li>
+                <li class="pgt-li">Narayan Hospital</li>
+                <li class="pgt-li">Seva Hospital</li>
+                <li class="pgt-li">Richa Hospital</li>
+                <li class="pgt-li">Tiwari Hospital</li>
                 <!-- List of hospitals will be populated here -->
-            </ul>
+            </ol>
         </section>
     </main>
 
-</body>
-
+    <script src="pgt.js"></script>
+</div>
 {% endblock %}
 {% block footer %}
 Hospital Locator

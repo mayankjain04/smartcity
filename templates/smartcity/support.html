@@ -1,11 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Hello support!
-</body>
-</html>
+{% extends "smartcity/layout.html" %}
+
+{% block title %}
+Documentation
+{% endblock %}
+
+{% block main %}
+<div id="support-container">
+    <div class="support-container">
+        <h2>Support and Information</h2>
+
+        <!-- Contact Information Section -->
+        <div class="section">
+            <h4>Contact Information</h4>
+            <div class="contact-info">
+                <ul>
+                    <li><strong>Traffic Management Helpline:</strong> 123-456-7890</li>
+                    <li><strong>Garbage Disposal Complaints:</strong> 098-765-4321</li>
+                    <li><strong>Women Helpline:</strong> 1091</li>
+                    <li><strong>Hospital Emergency Number:</strong> 112</li>
+                </ul>
+                <h4><strong>Email Support:</strong></h4>
+                <ul>
+                    <li>Traffic: <a href="traffic@domain.com">traffic@domain.com</a></li>
+                    <li>Garbage: <a href="garbage@domain.com">garbage@domain.com</a></li>
+                    <li>Women Helpline: <a href="women@domain.com">women@domain.com</a></li>
+                    <li>Hospital: <a href="hospital@domain.com">hospital@domain.com</a></li>
+                </ul>
+                <p><strong>Live Chat:</strong> <a href="#">Click here for live chat support</a></p>
+            </div>
+        </div>
+
+        <!-- FAQs Section -->
+        <div class="section">
+            <h2>FAQs (Frequently Asked Questions)</h2>
+
+            <h3 onclick="toggleSection('traffic')">Traffic Management</h3>
+            <div id="traffic" class="details" style="display: block;">
+                <ul>
+                    <li>How do I report a traffic violation?</li>
+                    <li>What should I do if there’s a traffic signal issue?</li>
+                    <li>How can I check live traffic updates?</li>
+                </ul>
+            </div>
+
+            <h3 onclick="toggleSection('garbage')">Garbage Disposal</h3>
+            <div id="garbage" class="details" style="display: block;">
+                <ul>
+                    <li>How can I report missed garbage collection?</li>
+                    <li>What types of waste are not accepted for disposal?</li>
+                    <li>How can I request special garbage collection services?</li>
+                </ul>
+            </div>
+
+            <h3 onclick="toggleSection('women')">Women Helpline</h3>
+            <div id="women" class="details" style="display:block;">
+                <ul>
+                    <li>How can I contact the women’s safety team?</li>
+                    <li>What should I do in case of an emergency?</li>
+                    <li>How do I report harassment or abuse?</li>
+                </ul>
+                          
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

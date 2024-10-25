@@ -1,0 +1,120 @@
+/* General Styles */
+.dm-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.dm-header {
+    background-color: #f57878;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.dm-h1 {
+    margin: 0;
+}
+
+.dm-h2 {
+    color: #ff5252;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.dm-button {
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Panic Button */
+.dm-panic-section {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#dm-panic-button {
+    background-color: #ff5252;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border: none;
+}
+
+#map {
+    height: 200px;
+    width: 90%;
+    border: 1px solid black;
+}
+
+@media (min-width: 768px) {
+    #map {
+        width: 55%;
+        height: 200px;
+    }
+}
+
+#dm-alert-msg {
+    color: green;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Modals */
+.dm-modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dm-modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.dm-close-btn {
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: red;
+}
+
+.dm-confirm-btn {
+    background-color: #ff5252;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    font-size: 1rem;
+}
+
+/* Footer */
+.dm-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.dm-d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dm-flex-col {
+    flex-direction: column;
+}

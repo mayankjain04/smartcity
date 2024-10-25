@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'women_helpline',
     'smartcity_manager',
     'hospitals',
     'traffic',

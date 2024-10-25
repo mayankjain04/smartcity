@@ -23,4 +23,5 @@ urlpatterns = [
     path('traffic/', include('traffic.urls')),
     path('hospitals/', include('hospitals.urls')),
     path('garbage/', include('garbage.urls')),
+    path('helpline/', include('women_helpline.urls'))
 ]

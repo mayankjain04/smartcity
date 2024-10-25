@@ -1,0 +1,87 @@
+{% extends 'smartcity/layout.html' %}
+{% load static %}
+
+{% block title %}
+Emergency Women Helpline
+{% endblock %}
+
+{% block script %}
+<link rel="stylesheet" href="{% static 'ewh/helpline.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="dm-body">
+    <!-- Header -->
+    <header class="dm-header mb-4">
+        <h1 class="dm-h1">Emergency Women Helpline</h1>
+    </header>
+
+    <!-- Panic Button with Modal -->
+    <section class="dm-panic-section mb-4">
+        <button id="dm-panic-button" class="btn btn-danger mb-2" onclick="triggerEmergencyModal()">Panic Button</button>
+        <p id="dm-alert-msg"></p>
+    </section>
+
+    <!-- Quick Contacts -->
+    <section class="dm-contacts-section mb-4">
+        <h2 class="dm-h2">Quick Contacts</h2>
+        <div class="dm-contacts dm-d-flex">
+            <button class="btn btn-primary me-2 mb-2" onclick="callEmergency('100')">Police</button>
+            <button class="btn btn-primary me-2 mb-2" onclick="callEmergency('1091')">Women Helpline</button>
+            <button class="btn btn-primary mb-2" onclick="callEmergency('911')">Medical Emergency</button>
+        </div>
+    </section>
+
+    <!-- Location Sharing -->
+    <section class="dm-location-section mb-4">
+        <h2 class="dm-h2">Share Location</h2>
+        <div class="dm-d-flex">
+            <button id="dm-location-button" class="btn btn-secondary mb-2 me-2" onclick="shareLocation()">Share My
+                Location</button>
+            <p id="dm-location-msg"></p>
+        </div>
+    </section>
+
+    <!-- Dynamic Safety Tips -->
+    <section class="dm-tips-section mb-4">
+        <h2 class="dm-h2">Safety Tips</h2>
+        <div class="dm-d-flex dm-flex-col">
+            <button id="dm-load-tips" class="btn btn-info mb-2" onclick="loadSafetyTips()">Load Safety Tips</button>
+            <ul id="dm-tips-list"></ul>
+        </div>
+    </section>
+
+    <!-- Nearby Safe Spaces Locator -->
+    <section class="dm-safe-spaces-section mb-4">
+        <h2 class="dm-h2">Find Nearby Safe Spaces</h2>
+        <div class="dm-d-flex dm-flex-col">
+            <a href="#map"> <button id="dm-safe-spaces-button" class="btn btn-success mb-2"
+                    onclick="findSafeSpaces()">Show Safe Spaces</button>
+            </a>
+            <div class="d-none dm-col dm-col-md-6 dm-col-12" id="map"></div>
+        </div>
+    </section>
+
+    <!-- Panic Modal -->
+    <div id="dm-panic-modal" class="dm-modal">
+        <div class="dm-modal-content dm-d-flex">
+            <span class="dm-close-btn" onclick="closeModal()">&times;</span>
+            <p>Are you sure you want to send an emergency alert?</p>
+            <button class="dm-confirm-btn btn btn-danger" onclick="sendAlert()">Confirm</button>
+        </div>
+    </div>
+
+    <div class="dm-d-flex align-items-center justify-content-center mt-4">
+        <p>Stay Safe. Help is just a click away!</p>
+    </div>
+</div>
+
+{% endblock %}
+{% block footer %}
+Emergency Women Helpline
+{% endblock %}
+
+{% block scripttag %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+<script src="{% static 'ewh/helpline.js' %}"></script>
+{% endblock %}

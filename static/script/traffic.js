@@ -1,5 +1,4 @@
 // get user location from localstorage
-
 let storedCoordinates = JSON.parse(localStorage.getItem('userCoordinates'));
 
 const scriptTag = document.querySelector('script[src*="traffic.js"]');
@@ -16,7 +15,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Add a circle to indicate the radius of the area
-var radius = dataRadius; 
+var radius = dataRadius;
 L.circle([latitude, longitude], {
     color: 'blue',
     fillColor: '#blue',
@@ -29,17 +28,17 @@ L.marker([latitude, longitude]).addTo(map)
     .bindPopup('You are here')
 
 // Fetch and display traffic data
-// fetch(`/traffic_data?latitude=${latitude}&longitude=${longitude}&radius=${radius}`)
+// fetch(`https://data.traffic.hereapi.com/v7/flow?in=circle:${latitude},${longitude};r=1000&locationReferencing=shape&apiKey=3TWVpmzl3O8Auvj5ZH3SbJ8OmetgN7BiT185Q-AzaT0`)
 //     .then(response => response.json())
 //     .then(data => {
 //         // Access the traffic data from the 'Results' key
 //         const results = data.Results;
 //         if (results && results.length > 0) {
 //             const traffic_data = results[0];
-//             // Access the 'flows' key within the first element of 'Results'
+//         // Access the 'flows' key within the first element of 'Results'
 //             traffic_data.flows.forEach(flow => {
 //                 var coordinates = flow.coordinates;
-//                 var length = flow.length; 
+//                 var length = flow.length;
 //                 var routeName = flow.routeName;
 //                 var routeLength = flow.routeLength;
 //                 var jamFactor = flow.jamStatus;
@@ -96,4 +95,4 @@ L.marker([latitude, longitude]).addTo(map)
 //             })
 //         }
 //     })
-    // .catch(error => console.error('Error fetching traffic data:', error));
+// .catch(error => console.error('Error fetching traffic data:', error));
